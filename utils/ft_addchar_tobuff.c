@@ -14,16 +14,15 @@
 
 char	*ft_addchar_tobuff(char *buffer, char i)
 {
-	char	*newbuf;
-	int	strlen;
-	
-	size_t	n;
+	int			strlen;
+	char		*newbuf;
+	size_t		n;
 
 	if (buffer == NULL)
 	{
-		buffer = malloc(sizeof(char) * 2);
-		buffer[0] = i;
-		buffer[1] = '\0';
+		newbuf = malloc(sizeof(char) * 2);
+		newbuf[0] = i;
+		newbuf[1] = '\0';
 	}
 	else
 	{
@@ -35,9 +34,9 @@ char	*ft_addchar_tobuff(char *buffer, char i)
 			newbuf[n] = buffer[n];
 			n++;
 		}
-		newbuf[++n] = i;
-		newbuf[++n] = '\0';
-		// free(buffer);
+		newbuf[n++] = i;
+		newbuf[n] = '\0';
+		free(buffer);
 	}
 	return (newbuf);
 }

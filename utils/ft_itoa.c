@@ -21,7 +21,7 @@ int	lennb(int number)
 	cpy = number;
 	if (cpy == 0)
 		return (1);
-	while(cpy != 0)
+	while (cpy != 0)
 	{
 		cpy /= 10;
 		i++;
@@ -31,8 +31,8 @@ int	lennb(int number)
 
 char	*ft_itoa(int pid)
 {
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 	char	*tmp;
 
 	len = lennb(pid);
@@ -40,7 +40,7 @@ char	*ft_itoa(int pid)
 	tmp[len] = '\0';
 	while (pid != 0)
 	{
-		tmp[len-1] = (pid % 10) + '0';
+		tmp[len - 1] = (pid % 10) + '0';
 		pid /= 10;
 		len--;
 	}

@@ -27,6 +27,7 @@ FLAGS			= -Wall -Wextra -Werror
 
 all: client server
 	make clean
+	clear
 
 
 client: ${OBJS_CLIENT}

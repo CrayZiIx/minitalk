@@ -12,11 +12,12 @@
 
 #include "../includes/minitalk.h"
 
-size_t ft_strlen(char *buffer)
+size_t	ft_strlen(char *buffer)
 {
-        size_t i;
-        i = 0;
-        while (buffer[i] != '\0')
-                i++;
-        return (i);
+	size_t	i;
+
+	i = 0;
+	while (buffer[i] != '\0')
+		i++;
+	return (i);
 }

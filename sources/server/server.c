@@ -14,59 +14,59 @@
 
 void	print_buffer(char *buffer)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (buffer[i] != '\0')
 	{
 		write(1, &buffer[i], 1);
 		i++;
 	}
-	// free(buffer);
+	write(1, "\n", 1);
 }
 
 void	print_pid(int pid)
 {
-	char *printable_pid;
-	
+	char	*printable_pid;
+
 	write(1, "PID is -> ", 11);
 	printable_pid = ft_itoa(pid);
 	print_buffer(printable_pid);
-	write(1, "\n", 1);
+	free(printable_pid);
 }
 
-void    ft_handler(int signal)
+void	ft_handler(int signal)
 {
-	// need to init 2 static bit and i;
-	// compare sig get , after getting 8 bits, a char and put it in a buffer until '\0' is send.
-	static int	bit;
-	static int	i;
-	char		*buffer;
+	static int	bit = 0;
+	static int	i = 0;
+	static char	*buffer = NULL;
 
-	if (buffer == NULL)
-		buffer = malloc(sizeof(char));
 	if (signal == SIGUSR1)
-		i |= (1 << bit);   
+		i |= (1 << bit);
 	bit++;
 	if (bit == 8)
 	{
 		if (i == '\0')
+		{
 			print_buffer(buffer);
+			bit = 0;
+			i = 0;
+			free(buffer);
+			buffer = NULL;
+		}
 		else
 		{
-			ft_addchar_tobuff(buffer , i);
+			buffer = ft_addchar_tobuff(buffer, i);
 			bit = 0;
 			i = 0;
 		}
 	}
 }
 
-
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int     pid;
+	int	pid;
 
-	
 	(void)argv;
 	if (argc != 1)
 		return (0);

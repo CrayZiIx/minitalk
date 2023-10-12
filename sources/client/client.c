@@ -23,15 +23,15 @@ void	ft_send_bits(int pid, char i)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(100);// pk ?
+		usleep(300);
 		bit++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	int pid;
-	int i;
+	int	pid;
+	int	i;
 
 	i = 0;
 	if (argc == 3)
@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 			ft_send_bits(pid, argv[2][i]);
 			i++;
 		}
-		ft_send_bits(pid, '\n');
+		ft_send_bits(pid, '\0');
 	}
 	else
 	{

@@ -13,17 +13,16 @@
 #ifndef MINITALK_H
 # define MINITALK_H
 
-#include <signal.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+# include <signal.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
 
-int     ft_atoi(char*);
-void	ft_send_bits(int , char );
+void	ft_send_bits(int number, char c);
+int		ft_atoi(char*str);
 
-char    *ft_addchar_tobuff(char *buffer , char i);
-size_t  ft_strlen(char *buffer);
+char	*ft_addchar_tobuff(char *buffer, char i);
+size_t	ft_strlen(char	*buffer);
 char	*ft_itoa(int pid);
-
 
 #endif

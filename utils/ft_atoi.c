@@ -12,26 +12,26 @@
 
 #include "../includes/minitalk.h"
 
-int     ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-        int     i;
-        int     value;
-        int     puissance;
+	int	i;
+	int	value;
+	int	puissance;
 
-        i = 1;
-        value = 0;
-        puissance = 1;
-        while (str[i] != '\0')
-        {
-                puissance *= 10;
-                i++;
-        }
-        i = 0;
-        while (str[i] != '\0')
-        {
-                value += (str[i] - '0' ) * puissance;
-                puissance /= 10;
-                i++;
-        }
-        return (value);
+	i = 1;
+	value = 0;
+	puissance = 1;
+	while (str[i] != '\0')
+	{
+		puissance *= 10;
+		i++;
+	}
+	i = 0;
+	while (str[i] != '\0')
+	{
+		value += (str[i] - '0' ) * puissance;
+		puissance /= 10;
+		i++;
+	}
+	return (value);
 }
