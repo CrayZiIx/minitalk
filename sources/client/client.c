@@ -40,16 +40,15 @@ int	main(int argc, char **argv)
 		pid = ft_atoi(argv[1]);
 		while (argv[2][i] != '\0')
 		{
-			// usleep(10);
 			ft_send_bits(pid, argv[2][i]);
 			i++;
 		}
 		ft_send_bits(pid, '\0');
-		return(0);
+		return (0);
 	}
 	else
 	{
-		printf("error\n");
+		write(1, "error\n", 6);
 		return (1);
 	}
 }
