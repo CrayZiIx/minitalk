@@ -6,7 +6,7 @@
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:19:46 by jolecomt          #+#    #+#             */
-/*   Updated: 2023/10/09 14:14:33 by jolecomt         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:41:14 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ void	ft_send_bits(int pid, char i)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(300);
+		usleep(50);
 		bit++;
 	}
+	usleep(100);
 }
 
 int	main(int argc, char **argv)
@@ -39,15 +40,16 @@ int	main(int argc, char **argv)
 		pid = ft_atoi(argv[1]);
 		while (argv[2][i] != '\0')
 		{
+			// usleep(10);
 			ft_send_bits(pid, argv[2][i]);
 			i++;
 		}
 		ft_send_bits(pid, '\0');
+		return(0);
 	}
 	else
 	{
 		printf("error\n");
 		return (1);
 	}
-	return (0);
 }
