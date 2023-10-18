@@ -6,7 +6,7 @@
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:19:33 by jolecomt          #+#    #+#             */
-/*   Updated: 2023/10/18 00:04:37 by jolecomt         ###   ########.fr       */
+/*   Updated: 2023/10/18 22:45:23 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@ void	print_buffer(char *buffer)
 	int	i;
 
 	i = 0;
-	while (buffer[i] != '\0')
+	if (buffer == NULL)
+		write(1, "\0", 1);
+	else
 	{
-		write(1, &buffer[i], 1);
-		i++;
+		while (buffer[i] != '\0')
+		{
+			write(1, &buffer[i], 1);
+			i++;
+		}
 	}
 	write(1, "\n", 1);
 }

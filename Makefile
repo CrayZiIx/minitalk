@@ -6,7 +6,7 @@
 #    By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 10:55:24 by jolecomt          #+#    #+#              #
-#    Updated: 2023/10/09 14:51:18 by jolecomt         ###   ########.fr        #
+#    Updated: 2023/10/18 22:54:57 by jolecomt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,25 +26,29 @@ CC 			= gcc
 FLAGS			= -Wall -Wextra -Werror
 
 all: client server
-	make clean
-	clear
+	echo "Minitalk is compiled"
 
 
 client: ${OBJS_CLIENT}
 	$(CC) $(FLAGS) ${OBJS_CLIENT} -o client
+	echo "The client has been created."
 
 server: ${OBJS_SERVER}
 	$(CC) $(FLAGS) ${OBJS_SERVER} -o server
+	echo "The server has been created."
 
 clean:
 	rm -f ${OBJS_CLIENT}
 	rm -f ${OBJS_SERVER}
+	echo "All objects from the client and the server have been deleted."
 
 fclean: clean
 	rm -f client
 	rm -f server
+	echo "The client and the server have been deleted."
 
 re: fclean all
+	# clear
 
 .PHONY: all clean fclean re
 

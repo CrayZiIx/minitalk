@@ -6,7 +6,7 @@
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:39:41 by jolecomt          #+#    #+#             */
-/*   Updated: 2023/10/09 13:57:34 by jolecomt         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:44:16 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_atoi(char *str)
 	i = 1;
 	value = 0;
 	puissance = 1;
+	if (!str)
+		return(0);
 	while (str[i] != '\0')
 	{
 		puissance *= 10;

@@ -6,7 +6,7 @@
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 10:19:46 by jolecomt          #+#    #+#             */
-/*   Updated: 2023/10/18 14:41:14 by jolecomt         ###   ########.fr       */
+/*   Updated: 2023/10/18 22:27:29 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc == 3)
 	{
+		if (argv[2] == NULL)
+			printf("test\n");
 		pid = ft_atoi(argv[1]);
 		while (argv[2][i] != '\0')
 		{
